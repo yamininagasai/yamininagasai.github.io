@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Delivery information</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		ul{
+			background:black;
+			height:80px;
+			width:90%;
+			margin:auto;
+			border-radius:10px;
+			border:5px solid gold;
+			}
+		ul li{
+			display:block;
+			position:relative;
+			float:left;
+			margin:20px auto;
+			width:30%;
+			}
+		ul li a{
+			text-decoration:none;
+			color:gold;
+			font-size:20px;
+			}
+		header{
+			padding:30px;
+			text-align:center;
+			font-size:36px;
+			font-style:bold;
+			}
+		.details{
+			position:relative;
+			float: right;
+			top:5%;
+			right:25%;
+			width: 45%;
+			background-color: grey;
+			margin:15px;
+			padding: 30px 20px;
+			height: 600px;
+			}
+		.name {
+			display: flex;
+			justify-content: center;
+			}
+		input[type=text],input[type=tel]{ 
+			-webkit-appearance: none;
+			width: 98%; 
+			padding: 20px 20px; 
+			margin:15px 8px; 
+			display: inline-block; 
+			border: 1px solid #000; 
+			box-sizing: border-box; 
+			background-color: white; 
+			height:10%;
+			border-radius:30px;
+			} 
+		.payment{
+			position:relative;
+			background:black;
+			margin:20px auto;
+			text-align:center;
+			width:30%;
+			height:10%;
+			display:block;
+			border-style:none;
+			border-radius:30px;
+			}
+		.price{
+			position:relative;
+			float:left;
+			left:15%;
+			margin:60px auto;
+			border: 1px solid black;
+			width: 20%;
+			height:100%;
+			}
+		.price input[type=number], .price input[type=text]{
+			position: relative;
+			left:5%;
+			margin:10px 20px;
+			color:black;
+			background-color:white;
+			width:15%;
+			height:20px;
+			padding:10px 0px;
+			font-size:24px;
+			border-style:none;
+			}
+		.price input[type=text]{
+			position: relative;
+			left:5%;
+			width:40%;
+			padding:0px;
+			height:30px;
+			margin:0px;
+			}
+		.price div{
+			color: black;
+			font-size:24px;
+			padding:10px;
+			}
+		@media (max-width:1000px){
+			.details{
+				position:relative;
+				float:left;
+				left:5%;
+				width:80%;
+				}
+				}
+	</style>
+	<script>
+		function info(){
+			var x=localStorage.length;
+			if(x<5){
+				alert("Please add Products to cart");
+				window.location.replace("handicraft.html");
+				}
+		}
+	</script>
+</head>
+
+<body onload="info()" style="background-color:grey">
+	<ul class="topnav">
+		<li><a href="handicraft.html"><i class="fa fa-fw fa-home" style="color:gold"></i>  Home</a></li>
+		<li><a href="localcart.html"><i class="fa fa-fw fa-shopping-cart" style="color:gold"> </i>Back to cart</a></li>
+	</ul>
+	<header>Delivery details</header>
+	<form name="f" class="details" method="POST">
+		<div class="name">
+			<input type="text" name="fn" id="fn" placeholder="First name" size="15" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode ==32)" required="">
+			<input type="text" name="ln" id = "ln" placeholder="Last name" aria-required="true" size="15" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode ==32)" required=""><br>
+		</div>
+		<input type="text" name="address1" id="address1" placeholder="Address Line 1" required="">
+		<input type="text" name="address2" id="address2" placeholder="Address Line 2" >
+		<input type="text" name="city" id="city" placeholder="City" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required="">
+		<div class="name">
+			<input type="text" name="state" placeholder="State" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && 	event.charCode < 123) || (event.charCode==32)" required="">
+			<input type="text" name="pincode" placeholder="Pincode" onkeypress="return (event.charCode>47 && event.charCode<58)" maxlength="5" pattern="^[0-9]{5}(?:-[0-9]{4})?$" title="Enter valid Zip code" required="">
+		</div>
+		<input type="text" name="country" placeholder="Country" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" required="">
+		<input type="tel" name="telphone" id="telphone" maxlength="10" placeholder="contact" onkeypress="return (event.charCode > 47 && event.charCode < 58)" size="10" pattern="[0-9]{10}" title="Enter the valid contact" required="">
+		<button type="submit" class="payment" formaction="payment.html" style="color:gold">Continue payment</button>
+	</form>
+</body>
+
+</html>

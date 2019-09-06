@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Handi crafts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+		.topnav, ul{
+			list-style:none;
+			background:black;
+			height:80px;
+			width:90%;
+			margin:auto;
+			border-radius:10px;
+			border:5px solid gold;
+			padding:0px;
+			}
+		.topnav li{
+			display: block;
+			position: relative;
+			float :left;
+			width:33.33%;
+			margin:auto;
+			padding:15px;
+			cursor:pointer;
+			}
+		.mySlides {
+			display:none;
+			}
+		.menu{
+			margin:15px 0px;
+			pading:20px auto;
+			width:50%;
+			height:120px;
+			}
+		.menu .content{
+			text-align:center;
+			width:100%;
+			margin:auto;
+			padding:0px;
+			cursor:pointer;
+			}
+		.topnav li a{
+		    font-size: 24px;
+			text-decoration: none;
+			color:gold;
+			padding:10px 2px;
+			margin:10px;
+			}
+		li ul{
+			display:none;
+			position:absolute;
+			margin:0px;
+			padding:0px;
+			}
+		li:hover .menu{
+			display:block;
+			}
+		.box{
+			width:50%;
+			margin:auto;
+			}
+		.box img{
+			width:100%;
+			height:500px;
+			border-radius:20px;
+			}
+		.box .text{
+			position:relative;
+			font:italic bold 64px Georgia, serif;
+			color:gold;
+			text-align:center;			
+            } 
+		.text p{
+			margin:1.5em auto;
+			}
+         .box .text1{
+			text-align:center;
+			font:italic bold 32px Georgia, serif;
+			color:gold;
+			}
+		.box a{
+			text-decoration:none;
+			}
+		.w3-content w3-section a img{
+			cursor:pointer;
+			height:500px;
+			}
+		.overview{
+			position:relative;
+			left:5%;
+			margin:40px auto;
+			}
+		footer{
+			border-top:1px solid black;
+			margin:10px auto 150px;
+			}
+		footer p{
+			text-align:center;
+			position:relative;
+			margin:50px auto;
+			}
+		footer input{
+			
+			margin:10px;
+			width:15%;
+			font-size:16px;
+			}
+		footer button{
+			background-color:black;
+			color:gold;
+			border-style:none;
+			height:50px;
+			font-size:24px;
+			}
+		@media screen and (max-width:800px) {
+			.box img{
+				width:100%;
+				height:500px;
+				}
+			.text p{
+				position:relative;
+				top:0px;
+				font-size:32px;
+				}
+			.text1 p{
+				font-size:20px;
+				}
+			.topnav .menu{
+				margin:5px;
+				pading:0px auto;
+				width:87%;
+				height:80px;
+				}
+			.menu .content{
+				text-align:left;
+				}
+			.menu .content a{
+				font-size:12px;
+				}
+			.topnav li a{
+				font-size:16px;
+				}
+			.topnav{
+				height:60px;
+				}
+			footer p {
+				text-align:left;
+				}
+			footer input{
+				width:30%;
+				}
+			}
+		@media screen and (min-width:800px){
+			.topnav .menu{
+				width:45%;
+				height:90px;
+				}
+			.menu .content a{
+				font-size:15px;
+				}
+			.menu .content{
+				text-align:left;
+				}
+			}
+	</style>
+</head>
+
+<body style="background-color:lightpink">
+	<ul class="topnav">
+		<li><a href="#"><i class="fa fa-fw fa-user" style="color:gold"> </i>  Login</a></li>
+		<li><a href="localcart.html"><i class="fa fa-fw fa-shopping-cart" style="color:gold"> </i>  Cart </a></li>
+		<li><a href="#"></i>  Categeory</a>
+			<ul class="menu" >
+				<li class="content"><a href="paper crafts.html">Paper crafts</a></li>
+				<li class="content"><a href="wood crafts.html">Wood crafts</a></li>
+				<li class="content"><a href="cloth crafts.html">Cloth crafts</a></li>
+			</ul>
+		</li>
+	</ul>
+    <div class="box" style="width:90%">
+		<div class="text">
+			<p>Handi - Crafts</p>
+		</div>
+		<div class="w3-content w3-section" style="max-width:95%; height:500px">
+			<img class="mySlides" src="https://www.whatsuplife.in/delhi/blog/wp-content/uploads/2016/10/left-image.jpg "  style="width:100%">
+			<a href="paper crafts.html">
+				<img class="mySlides" src="https://i.ytimg.com/vi/XCcssRD61FA/maxresdefault.jpg" style="width:100%">
+			</a>
+			<a href="wood crafts.html">
+				<img class="mySlides" src="https://static.toiimg.com/photo/51732122/.jpg" style="width:100%">
+			</a>
+			<a href="cloth crafts.html">
+				<img class="mySlides" src="https://i0.wp.com/ae01.alicdn.com/kf/HTB1FajDxMmTBuNjy1Xbq6yMrVXaN/36-49cm-starry-girl-Imitation-silk-diy-bag-fabric-cloth-sewing-pattern-painting-material-crafts-textile.jpg" style="width:100%">
+			</a>
+			<img class="mySlides" src="http://hcjaipur.com/wp-content/uploads/2016/08/jaipur-handicrafts-manufact.jpg" style="width:100%">
+			
+		</div>
+	</div>
+	<div class="box">
+		<a href="paper crafts.html">
+			<div class="text1" style="top:155%">
+				<p>Paper crafts</p>
+			</div>
+			<img src="https://cdn.frugalfun4boys.com/wp-content/uploads/2019/03/Paper-Crafts-Collage-1.jpg">
+		</a>
+	</div>
+	<div class="box">
+		<a href="wood crafts.html">
+			<div class="text1" style="top:100%">
+				<p>Wooden crafts</p>
+			</div>
+			<img src="http://raigointernational.com/Templates/assets/img/Textiles/111.jpg">
+		</a>
+	</div>
+	<div class="box">
+		<a href="cloth crafts.html">
+			<div class="text1" style="top:215%">
+				<p>Cloth crafts</p>
+			</div>
+			<img src="https://i.ytimg.com/vi/ZQ7h_89NSn8/maxresdefault.jpg">
+		</a>
+	</div>
+	<div class="overview">
+		<p style="font-size:24px">How many days it take to deliver?</p>
+		<p> It generally take 2-4 business days to deliver. Sometimes it may take 4-6 days or more depending on the delivery location...</p>
+	</div>
+	<footer>
+	<p>Subscribe for Email offers: </p><p><input type="email" id="mail" placeholder="yourname@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"><button onclick="registration()"><a>Subscribe</a></button></p>
+	
+	</footer>
+	<script>
+		var myIndex = 0;
+		carousel();
+		function carousel() {
+		
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+				}
+			myIndex++;
+			if (myIndex > x.length) {
+				myIndex = 1;
+				} 
+			x[myIndex-1].style.display = "block";  
+			setTimeout(carousel, 4000); // Change image every 4 seconds
+			}
+		function registration(){
+			var k=0;
+			var m=document.getElementById("mail");
+			var mail=m.value;
+			var a=mail.indexOf("@");
+			var dot=mail.indexOf(".");
+			if(a<1||dot<a+2||dot+2>mail.length){
+				k=1;
+				alert("Please enter valid email");
+				mail.value="";
+				}
+			else{
+				alert("Thanks for registering with us");
+				mail.value="";
+				}
+			}
+</script>
+</body>
+
+</html>
+ 

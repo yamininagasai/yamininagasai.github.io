@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Order confirmation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		header{
+			padding:30px;
+			text-align:center;
+			font-size:36px;
+			font-style:bold;
+			}
+		.container{
+			border:1px solid black;
+			width:50%;
+			height:500px;
+			font-size:24px;
+			float:left;
+			position:relative;
+			text-align:left;
+			left:25%;
+			margin:5px auto;
+			border-radius:50px;
+			}
+		input[type=number],input[type=text]{
+			position: relative;
+			left:5%;
+			margin:10px 50px 10px 0px;
+			color:black;
+			background-color:white;
+			width:11%;
+			height:20px;
+			padding:10px 0px;
+			font-size:24px;
+			border-style:none;
+			}
+		input[type=text]{
+			position: relative;
+			left:5%;
+			width:40%;
+			padding:10px 0px;
+			height:20px;
+			margin:0px;
+			}
+		.container div{
+			color: black;
+			font-size:24px;
+			padding:10px;
+			text-align:left;
+			}
+		#demo{
+		    background:white;
+			border-style: none;
+			}
+		#orderid{
+			width:50%
+			}
+		p{
+			text-align:center;
+			font-size:24px;
+			}
+		.topnav{
+			position:-webkit-sticky;
+			list-style:none;
+			background:black;
+			height:80px;
+			width:90%;
+			margin:auto;
+			border-radius:10px;
+			border:5px solid gold;
+			padding:0;
+			}
+		ul li{
+			display: block;
+			position: relative;
+			float :left;
+			width:33.33%;
+			margin:20px auto;
+			}
+		ul li a{
+		    font-size: 24px;
+			text-decoration: none;
+			color:gold;
+			padding:10px 2px;
+			margin:10px;
+			}
+		ul .cart{ 
+			float:right;
+			}
+		@media (max-width: 800px){
+			input[type=text], input[type=number]{
+				margin:0;
+				padding:0;
+				width:50%;
+				font-size:20px;
+				}
+			.container div{
+				font-size:20px;
+				padding:10px 3px;
+				}
+			.container p{
+				font-size:20px;
+				}
+			.container{
+				height:400px;
+				}
+			
+			}
+	</style>
+	<script>
+		function order(){
+			var x = Math.floor((Math.random() * 10000000000) + 1);
+			document.getElementById("orderid").value = x;
+			document.getElementById("orderid").disabled=true;
+			var date= new Date();
+			var day= date.getDate();
+			var mon = date.getMonth();
+			var year = date.getFullYear();
+			document.getElementById("ord-date").value=day+ "-"+mon+"-"+year;
+			document.getElementById("ord-date").disabled=true;
+			var price=localStorage.getItem("price");
+			document.getElementById("total-price").value= price +" $ ";
+			document.getElementById("total-price").disabled=true;
+			localStorage.clear();
+			}
+	</script>
+</head>
+
+<body onload="order()">
+	<ul class="topnav">
+		<li><a href="handicraft.html"><i class="fa fa-fw fa-home" style="color:gold"></i>  Home</a></li>
+	</ul>
+	<header>Order Confirmation</header>
+	<div class="container">
+		<div>
+			<div>Order ID:<input type="text" id="orderid"></div>
+			<div> Total price: <input type="text" id="total-price"></div>
+		</div>
+		<div >
+			Ordered date : <input type="text" id="ord-date">
+		</div>
+		<p>Order will be delivered in 3-4 working days...</p>
+		<p> Thanks for Ordering... Visit Again..</p>
+		<p style="font-size:32px">&#128522;</p>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Crown</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="productdescription.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="localpro.js"></script>
+</head>
+
+<body style="background-color:lightblue">
+	<ul class="topnav">
+		<li><a href="paper crafts.html"><i class="fa fa-fw fa-angle-left" style="cololr:gold"></i> Back</a></li>
+		<li><a href="localcart.html"><i class="fa fa-fw fa-shopping-cart" style="color:gold"></i>  Cart</a></li>
+	</ul>
+	<header>Crown </header>
+	<div class="product"><img src="https://diyjoy.com/wp-content/uploads/2018/07/Paper-Floral-Crown.jpg" >
+		<div>
+			<h1>Crown paper craft</h1>
+			<h2>ID : <input type="text" id="demo" value="1000103" style="background-color:lightblue; border-style:none"></h2> 
+			<p>This craft is made of color papers. These hand made Crown can be used for babies to wear....</p>
+		</div> 
+	</div>
+	<div class="rightcolumn" >
+		<div style="text-decoration: underline; text-align:center">Product details:</div>
+		<div>Price: <input type="text" id="price" value="40">$</div>
+		<div>Quantity : <input type="number" id="quant" min="1" max="5" placeholder="add" onclick="totalCalc()" onkeyup="totalCalc()" onkeypress="return(event.charCode >48 && event.charCode <58) " >  you can add only 5</div>
+		<div> Total Cost: <input type="text" id="total" name="cost" disabled>  $</div>
+		<button type="submit" class="checkout" onclick="cook()" method="POST" ><a href="localcart.html">Add to cart</a></button>
+		<div align="center" class="shopping"><a href="handicraft.html" onclick="cart()">continue shopping</a></div>
+	</div>
+</body>
+
+</html>
+
+

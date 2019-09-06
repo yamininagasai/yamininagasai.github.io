@@ -166,9 +166,16 @@
 				}
 			}
 	</style>
+	<script>
+		function check(){
+			if(localStorage.getItem("title0")){
+				localStorage.clear();
+			}
+		}
+	</script>
 </head>
 
-<body style="background-color:lightpink">
+<body style="background-color:lightpink" onload="check()">
 	<ul class="topnav">
 		<li><a href="#"><i class="fa fa-fw fa-user" style="color:gold"> </i>  Login</a></li>
 		<li><a href="localcart.html"><i class="fa fa-fw fa-shopping-cart" style="color:gold"> </i>  Cart </a></li>

@@ -164,7 +164,7 @@
 			var table=document.getElementById("products-table");
 			var rowcount=table.rows.length;
 			var productcount=localStorage.length;
-			for(var j=0;j<productcount-1; j++){
+			for(var j=0;j<productcount; j++){
 				var key=localStorage.key(j);
 				if(key!="price"){
 					var product=localStorage.getItem(key);

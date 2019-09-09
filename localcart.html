@@ -144,12 +144,13 @@
 			var tab=document.getElementById("products-table"),sumVal=0;
 			if(tab.rows.length>1){
 				for( var i=1; i<tab.rows.length; i++){
-					sumVal = sumVal + parseInt(tab.rows[i].cells[3].innerHTML);  //calculating sum
+					sumVal = sumVal + parseFloat(tab.rows[i].cells[3].innerHTML);  //calculating sum
 					}
 				var delicharge=document.getElementById("deliverycharge").value;
-				var tot=Number(sumVal)+ Number(delicharge);
-				document.getElementById("total").value=tot + " $ ";			//adding with delivery charges
-				localStorage.setItem("price",tot);
+				var tot=parseFloat(sumVal)+ Number(delicharge);
+				var tot1=tot.toFixed(2);
+				document.getElementById("total").value=tot1 + " $ ";			//adding with delivery charges
+				localStorage.setItem("price",tot1);
 				}
 			else{
 				document.getElementById("total").value=0;	//if NO, product in the cart then grandtotal is 0

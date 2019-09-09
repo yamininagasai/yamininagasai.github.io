@@ -121,7 +121,7 @@
 		function init(){
 			var datacount=localStorage.length;
 			var render='<table class="price" id="products-table">';
-			render += "<tr><th> Product Name </th><th> Product ID </th><th> Quantity  </th><th> Product price </th><th> Remove</th></tr>"
+			render += "<tr><th> Product Name </th><th> Product ID </th><th> Quantity  </th><th> Product price </th><th> Remove</th><th> Edit</th></tr>"
 			if(datacount>0){
 				for(i=0;i<datacount;i++){
 					var key=localStorage.key(i);
@@ -132,7 +132,8 @@
 						render += "<td>" + data.id + "</td>";
 						render += "<td>" +data.quantity + "</td>";
 						render += "<td>" +data.price + "</td>";
-						render += '<td><button class="remove" onclick="removeRows(this)">Remove</button></td></tr>';
+						render += '<td><button class="remove" onclick="removeRows(this)">Remove</button></td>';
+						render += '<td><button class="remove" onclick="editProduct(this)"> Edit </button></td></tr>';
 						}
 					}
 				}			
@@ -210,6 +211,13 @@
 			}
 		function previous(){		
 			window.history.back();
+			}
+		function editProduct(o){
+			var p=o.parentNode.parentNode;
+			var val=p.cells[1].innerHTML;
+			var x=val[6], y=val[4];
+			var name=["paper","wood","cloth"];
+			window.location.replace(name[y-1]+x+".html");
 			}
 	</script>		
 </head>

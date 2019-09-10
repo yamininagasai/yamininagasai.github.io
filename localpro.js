@@ -23,7 +23,7 @@ function cook(){	//saving the product details in the localStorage
 		return false;
 		}
 	else{
-		var myProduct={title: productTitle, quantity:productQuantity, id: productId, price:productPrice}
+		var myProduct={title: productTitle, quantity:productQuantity, id: productId, price:productPrice};
 		var myJSON= JSON.stringify(myProduct);			
 		var productcount=localStorage.length;
 		if(productcount==0){

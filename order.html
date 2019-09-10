@@ -111,26 +111,19 @@
 	</style>
 	<script>
 		function order(){
-			var storageLength=localStorage.length;
-			if(storageLength<2){
-				alert("Please add Products to cart");
-				window.location.replace("handicraft.html");
-				}
-			else{
-				var x = Math.floor((Math.random() * 10000000000) + 1);
-				document.getElementById("orderid").value = x;
-				document.getElementById("orderid").disabled=true;
-				var date= new Date();
-				var day= date.getDate();
-				var mon = date.getMonth();
-				var year = date.getFullYear();
-				document.getElementById("ord-date").value=day+ "-"+mon+"-"+year;
-				document.getElementById("ord-date").disabled=true;
-				var price=localStorage.getItem("price");
-				document.getElementById("total-price").value= price +" $ ";
-				document.getElementById("total-price").disabled=true;
-				localStorage.clear();
-				}
+			var x = Math.floor((Math.random() * 10000000000) + 1);
+			document.getElementById("orderid").value = x;
+			document.getElementById("orderid").disabled=true;
+			var date= new Date();
+			var day= date.getDate();
+			var mon = date.getMonth();
+			var year = date.getFullYear();
+			document.getElementById("ord-date").value=day+ "-"+mon+"-"+year;
+			document.getElementById("ord-date").disabled=true;
+			var price=localStorage.getItem("price");
+			document.getElementById("total-price").value= price +" $ ";
+			document.getElementById("total-price").disabled=true;
+			localStorage.clear();
 			}
 	</script>
 </head>

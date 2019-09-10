@@ -127,11 +127,11 @@
 					var key=localStorage.key(i);
 					if(key!="price"){
 						var product=localStorage.getItem(key);
-						var data=JSON.parse(product);
-						render += "<tr><td>" + data.title + "</td>";
-						render += "<td>" + data.id + "</td>";
-						render += "<td>" +data.quantity + "</td>";
-						render += "<td>" +data.price + "</td>";
+						var productDetails=JSON.parse(product);
+						render += "<tr><td>" + productDetails.title + "</td>";
+						render += "<td>" + productDetails.id + "</td>";
+						render += "<td>" +productDetails.quantity + "</td>";
+						render += "<td>" +productDetails.price + "</td>";
 						render += '<td><button class="remove" onclick="removeRows(this)">Remove</button></td>';
 						render += '<td><button class="remove" onclick="editProduct(this)"> Edit </button></td></tr>';
 						}
@@ -142,16 +142,16 @@
 			grandTotal(); 
 			}
 		function grandTotal(){		 //finding the product price total
-			var tab=document.getElementById("products-table"),sumVal=0;
-			if(tab.rows.length>1){
+			var table=document.getElementById("products-table"),sumVal=0;
+			if(table.rows.length>1){
 				for( var i=1; i<tab.rows.length; i++){
 					sumVal = sumVal + parseFloat(tab.rows[i].cells[3].innerHTML);  //calculating sum
 					}
 				var delicharge=document.getElementById("deliverycharge").value;
-				var tot=parseFloat(sumVal)+ Number(delicharge);
-				var tot1=tot.toFixed(2);
-				document.getElementById("total").value=tot1 + " $ ";			//adding with delivery charges
-				localStorage.setItem("price",tot1);
+				var total=parseFloat(sumVal)+ Number(delicharge);
+				var totalCharge=total.toFixed(2);
+				document.getElementById("total").value=totalCharge + " $ ";			//adding with delivery charges
+				localStorage.setItem("price",totalCharge);
 				}
 			else{
 				document.getElementById("total").value=0;	//if NO, product in the cart then grandtotal is 0
@@ -189,8 +189,8 @@
 				}
 			}
 		function removeRows(o){		
-			var p=o.parentNode.parentNode;
-			p.parentNode.removeChild(p);
+			var presentRow=o.parentNode.parentNode;
+			presentRow.parentNode.removeChild(presentRow);
 			if(localStorage.length<=2){
 				localStorage.clear();
 				document.getElementById("total").value=0;
@@ -213,11 +213,11 @@
 			window.history.back();
 			}
 		function editProduct(o){
-			var p=o.parentNode.parentNode;
-			var val=p.cells[1].innerHTML;
-			var x=val[6], y=val[4];
-			var name=["paper","wood","cloth"];
-			window.location.replace(name[y-1]+x+".html");
+			var presentRow=o.parentNode.parentNode;
+			var val=presentRow.cells[1].innerHTML;
+			var productNum=val[6], categeoryNum=val[4];
+			var productName=["paper","wood","cloth"];
+			window.location.replace(name[categeoryNum-1]+productNum+".html");
 			}
 	</script>		
 </head>

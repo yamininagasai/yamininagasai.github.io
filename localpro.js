@@ -23,7 +23,7 @@ function cook(){	//saving the product details in the localStorage
 		return false;
 		}
 	else{
-		var myProduct={title: productTitle, quantity:productQuantity, id: productId, price:productPrice;
+		var myProduct={title: productTitle, quantity:productQuantity, id: productId, price:productPrice}
 		var myJSON= JSON.stringify(myProduct);			
 		var productcount=localStorage.length;
 		if(productcount==0){
@@ -45,14 +45,14 @@ function cook(){	//saving the product details in the localStorage
 				var product=localStorage.getItem(key);
 				var data=JSON.parse(product);
 				var producttitle=data.id;
-				if(producttitle!=id){
+				if(producttitle!=productId){
 					i++;
 					j++;
 					if(j==productcount){
 						localStorage.setItem("product"+x, myJSON);
 						}
 					}
-				else if(producttitle==id){
+				else if(producttitle==productId){
 					localStorage.setItem(key, myJSON);
 					return true;
 					}

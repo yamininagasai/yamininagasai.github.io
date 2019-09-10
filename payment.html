@@ -185,10 +185,17 @@
 				document.getElementById("payment").action = "order.html";
 				}
 			}
+		function noProducts(){
+			var x=localStorage.length;
+			if(x<2){
+				alert("Please add Products to cart");
+				window.location.replace("handicraft.html");
+				}
+		}
 	</script>				
 </head>
 
-<body>
+<body onload="noProducts()">
 	<ul class="topnav">
 		<li><a href="deliveryinfo.html"><i class="fa fa-fw fa-angle-left" style="color:gold"></i>  Back</a></li>
 		<li><a href="localcart.html"><i class="fa fa-fw fa-shopping-cart" style="color:gold"></i>  Cart</a></li>

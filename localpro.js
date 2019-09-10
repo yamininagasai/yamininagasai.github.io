@@ -1,30 +1,30 @@
 function totalCalc(){			//calculating the product price depending on quantity
-	var q = document.getElementById("quant").value;
+	var quantity = document.getElementById("quant").value;
 	var price=document.getElementById("price").value;
-	if (q>5){
+	if (quantity>5){
 		alert ("you can only add 5 quantities");
 		document.getElementById("quant").value="";
 		document.getElementById("total").value="";
 		}
 	else{
-		var rupees=(q*price);
+		var rupees=(quantity*price);
 		cost=rupees.toFixed(2);
 		document.getElementById("total").value = cost;
 		document.getElementById("total").disabled=true;
 		}
 	}
 function cook(){	//saving the product details in the localStorage
-	var rupees = document.getElementById("total").value;
-	var tit= document.title;					//tit=doll
-	var id=document.getElementById("demo").value;
-	var quant=document.getElementById("quant").value;
+	var productPrice = document.getElementById("total").value;
+	var productTitle= document.title;					//tit=doll
+	var productId=document.getElementById("demo").value;
+	var productQuantity=document.getElementById("quant").value;
 	if(quant.length==0){
 		alert("Please enter quantity of products");
 		return false;
 		}
 	else{
-		var myPro={title: tit, quantity:quant, id: id, price:rupees};
-		var myJSON= JSON.stringify(myPro);			
+		var myProduct={title: productTitle, quantity:productQuantity, id: productId, price:productPrice;
+		var myJSON= JSON.stringify(myProduct);			
 		var productcount=localStorage.length;
 		if(productcount==0){
 			localStorage.setItem("product1",myJSON);

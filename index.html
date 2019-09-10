@@ -166,13 +166,6 @@
 				}
 			}
 	</style>
-	<script>
-		function check(){
-			if(localStorage.getItem("title0")){
-				localStorage.clear();
-			}
-		}
-	</script>
 </head>
 
 <body style="background-color:lightpink" onload="check()">
@@ -240,9 +233,8 @@
 	</footer>
 	<script>
 		var myIndex = 0;
-		carousel();
-		function carousel() {
-		
+		slideShows();
+		function slideShows() {
 			var i;
 			var x = document.getElementsByClassName("mySlides");
 			for (i = 0; i < x.length; i++) {
@@ -255,13 +247,13 @@
 			x[myIndex-1].style.display = "block";  
 			setTimeout(carousel, 4000); // Change image every 4 seconds
 			}
-		function registration(){
+		function registrationAlert(){
 			var k=0;
-			var m=document.getElementById("mail");
-			var mail=m.value;
-			var a=mail.indexOf("@");
-			var dot=mail.indexOf(".");
-			if(a<1||dot<a+2||dot+2>mail.length){
+			var mail=document.getElementById("mail");
+			var mailvalue=mail.value;
+			var mailindex=mailvalue.indexOf("@");
+			var dot=mailvalue.indexOf(".");
+			if(mailindex<1||dot<mailindex+2||dot+2>mailvalue.length){
 				k=1;
 				alert("Please enter valid email");
 				mail.value="";
@@ -271,6 +263,11 @@
 				mail.value="";
 				}
 			}
+		function check(){
+			if(localStorage.getItem("title0")){
+				localStorage.clear();
+			}
+		}
 </script>
 </body>
 

@@ -144,8 +144,8 @@
 		function grandTotal(){		 //finding the product price total
 			var table=document.getElementById("products-table"),sumVal=0;
 			if(table.rows.length>1){
-				for( var i=1; i<tab.rows.length; i++){
-					sumVal = sumVal + parseFloat(tab.rows[i].cells[3].innerHTML);  //calculating sum
+				for( var i=1; i<table.rows.length; i++){
+					sumVal = sumVal + parseFloat(table.rows[i].cells[3].innerHTML);  //calculating sum
 					}
 				var delicharge=document.getElementById("deliverycharge").value;
 				var total=parseFloat(sumVal)+ Number(delicharge);

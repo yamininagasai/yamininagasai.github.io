@@ -228,14 +228,13 @@
 		<p> It generally take 2-4 business days to deliver. Sometimes it may take 4-6 days or more depending on the delivery location...</p>
 	</div>
 	<footer>
-	<p>Subscribe for Email offers: </p><p><input type="email" id="mail" placeholder="yourname@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"><button onclick="registration()"><a>Subscribe</a></button></p>
+	<p>Subscribe for Email offers: </p><p><input type="email" id="mail" placeholder="yourname@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"><button onclick="registrationAlert()"><a>Subscribe</a></button></p>
 	
 	</footer>
 	<script>
 		var myIndex = 0;
-		carousel();
-		function carousel() {
-		
+		slideShows();
+		function slideShows() {
 			var i;
 			var x = document.getElementsByClassName("mySlides");
 			for (i = 0; i < x.length; i++) {
@@ -246,15 +245,15 @@
 				myIndex = 1;
 				} 
 			x[myIndex-1].style.display = "block";  
-			setTimeout(carousel, 4000); // Change image every 4 seconds
+			setTimeout(slideShows, 4000); // Change image every 4 seconds
 			}
-		function registration(){
+		function registrationAlert(){
 			var k=0;
-			var m=document.getElementById("mail");
-			var mail=m.value;
-			var a=mail.indexOf("@");
-			var dot=mail.indexOf(".");
-			if(a<1||dot<a+2||dot+2>mail.length){
+			var mail=document.getElementById("mail");
+			var mailvalue=mail.value;
+			var mailindex=mailvalue.indexOf("@");
+			var dot=mailvalue.indexOf(".");
+			if(mailindex<1||dot<mailindex+2||dot+2>mailvalue.length){
 				k=1;
 				alert("Please enter valid email");
 				mail.value="";

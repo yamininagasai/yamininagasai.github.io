@@ -122,9 +122,6 @@
 				window.location.replace("handicraft.html");
 				}
 		}
-		function nextPage(){
-			window.location.href="payment.html";
-		}
 	</script>
 </head>
 
@@ -148,7 +145,7 @@
 		</div>
 		<input type="text" name="country" placeholder="Country" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" required="">
 		<input type="tel" name="telphone" id="telphone" maxlength="10" placeholder="contact" onkeypress="return (event.charCode > 47 && event.charCode < 58)" size="10" pattern="[0-9]{10}" title="Enter the valid contact" required="">
-		<button type="submit" class="payment" style="color:gold" onclick="nextPage()">Continue payment</button>
+		<button type="submit" class="payment" style="color:gold">Continue payment</button>
 	</form>
 </body>
 

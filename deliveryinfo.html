@@ -120,8 +120,39 @@
 			if(x<2){
 				alert("Please add Products to cart");
 				window.location.replace("handicraft.html");
-				}
+			}
 		}
+		function validate(){
+			var fn=document.getElementById("fn").value;
+			var ln=document.getElementById("ln").value;
+			var address1=document.getElementById("address1").value;
+			var city=document.getElementById("city").value;
+			var state=document.getElementById("state").value;
+			var pincode=document.getElementById("pincode").value;
+			var country=document.getElementById("country").value;
+			var telephone=document.getElementById("telephone").value;
+			if((fn!="")&&(ln!="")){
+				if((address1!="")&&(city!="")){
+					if((state!="")&&(pincode!="")){
+						if((country!="")&&(telephone!="")){
+							return true;
+						}
+						else{
+							return false;
+						}
+					}
+					else{
+						return false;
+					}
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}		
 	</script>
 </head>
 
@@ -131,7 +162,7 @@
 		<li><a href="localcart.html"><i class="fa fa-fw fa-shopping-cart" style="color:gold"> </i>Back to cart</a></li>
 	</ul>
 	<header>Delivery details</header>
-	<form name="f" class="details" method="POST" action="payment.html">
+	<form name="f" class="details" onsubmit="validate()" method="POST" action="payment.html">
 		<div class="name">
 			<input type="text" name="fn" id="fn" placeholder="First name" size="15" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode ==32)" required="">
 			<input type="text" name="ln" id = "ln" placeholder="Last name" aria-required="true" size="15" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode ==32)" required=""><br>
@@ -140,11 +171,11 @@
 		<input type="text" name="address2" id="address2" placeholder="Address Line 2" >
 		<input type="text" name="city" id="city" placeholder="City" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required="">
 		<div class="name">
-			<input type="text" name="state" placeholder="State" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && 	event.charCode < 123) || (event.charCode==32)" required="">
-			<input type="text" name="pincode" placeholder="Pincode" onkeypress="return (event.charCode>47 && event.charCode<58)" maxlength="5" pattern="^[0-9]{5}(?:-[0-9]{4})?$" title="Enter valid Zip code" required="">
+			<input type="text" name="state" id="state" placeholder="State" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && 	event.charCode < 123) || (event.charCode==32)" required="">
+			<input type="text" name="pincode" id="pincode" placeholder="Pincode" onkeypress="return (event.charCode>47 && event.charCode<58)" maxlength="5" pattern="^[0-9]{5}(?:-[0-9]{4})?$" title="Enter valid Zip code" required="">
 		</div>
-		<input type="text" name="country" placeholder="Country" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" required="">
-		<input type="tel" name="telphone" id="telphone" maxlength="10" placeholder="contact" onkeypress="return (event.charCode > 47 && event.charCode < 58)" size="10" pattern="[0-9]{10}" title="Enter the valid contact" required="">
+		<input type="text" name="country" id="country" placeholder="Country" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" required="">
+		<input type="tel" name="telphone" id="telephone" maxlength="10" placeholder="contact" onkeypress="return (event.charCode > 47 && event.charCode < 58)" size="10" pattern="[0-9]{10}" title="Enter the valid contact" required="">
 		<button type="submit" class="payment" style="color:gold">Continue payment</button>
 	</form>
 </body>
